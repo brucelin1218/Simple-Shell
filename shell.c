@@ -1,5 +1,5 @@
 //
-//  shell_BruceLin_755.c
+//  simple_shell.c
 //  Copyright © 2018 Bruce Lin. All rights reserved.
 //
 
@@ -16,16 +16,16 @@ int main(void) {
   int should_run = 1;         // Flag to determine when to exit program
   int parent_run = 1;         // Flag to determine the parent process is running.
   
-  printf("CS149 Shell from Bruce Lin\n");
+  printf("A simple shell from Bruce Lin\n");
   fflush(stdout);
   
   while (should_run) {
-    for (int i = 0; i < MAXLINE/2+1; i++)  // Clean the buffer in args[]
+    for (int i = 0; i < MAXLINE/2 + 1; i++)  // Clean the buffer in args[]
       args[i] = NULL;
     
-    printf("Bruce-755> ");    // Prompt
+    printf("Simple_Shell> ");    // Prompt
     fflush(stdout);
-    fgets(str, 20, stdin);    // read the command line from the user input.
+    fgets(str, 20, stdin);       // read the command line from the user input.
     
     if (str[strlen(str) - 1] == '\n') // Clear the '\n' at the end from the user input.
       str[strlen(str) - 1] = '\0';
